@@ -1,0 +1,35 @@
+[build-system]
+requires = ["setuptools>=61", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "scratchtree-aravind"
+version = "0.1.0"
+description = "A decision tree classifier implemented from scratch with entropy and information gain."
+readme = "README.md"
+license = { text = "MIT" }
+authors = [{ name = "Aravind" }]
+requires-python = ">=3.9"
+dependencies = ["numpy>=1.21"]
+keywords = ["decision tree", "machine learning", "entropy", "information gain", "ID3"]
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+    "Intended Audience :: Education",
+    "Topic :: Scientific/Engineering :: Artificial Intelligence",
+]
+
+[project.optional-dependencies]
+plot = ["matplotlib>=3.5"]
+dev = ["pytest", "scikit-learn", "matplotlib>=3.5", "build", "twine"]
+
+[project.urls]
+Homepage = "https://github.com/aravindreddykolan14-debug/scratchtree-"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "--doctest-modules src/scratchtree"
